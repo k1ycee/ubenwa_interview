@@ -1,4 +1,3 @@
-import 'package:eden_garden/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -19,8 +18,7 @@ class EdenNavigationService {
     Widget route, {
     bool isDialog = false,
   }) {
-    logger.i('Nav: Current Route -> ${route.runtimeType}');
-    recordRoute(route);
+
     return state!.pushAndRemoveUntil(
       PageTransition(
         alignment: Alignment.center,
@@ -34,15 +32,11 @@ class EdenNavigationService {
 
   /// Push a named route
   void pushTop(String routeName) {
-    logger.i('Nav: Current Route -> ${(routeName)}');
-    UXCamService.tagRouteName(routeName);
+
     state!.pushNamed(routeName);
   }
 
-  void recordRoute(Widget route) {
-    UXCamService.tagRouteName('${route.runtimeType}');
-    FirebaseAnalyticsService.recordRoute('${route.runtimeType}');
-  }
+
 
   /// Push a replacement route
   void replaceTop(
@@ -77,7 +71,7 @@ class EdenNavigationService {
         : _materialRoute<T>(
             page,
           );
-    recordRoute(page);
+
     return state!.push(route);
   }
 
@@ -103,7 +97,7 @@ class EdenNavigationService {
   PageTransition<T> _materialRoute<T>(
     Widget widget,
   ) {
-    logger.i('Nav: Current Route -> ${widget.runtimeType}');
+
 
     return PageTransition<T>(
       alignment: Alignment.center,
@@ -117,7 +111,7 @@ class EdenNavigationService {
 
   /// Custom Transaprent route
   TransparentRoute<T> _transparentRoute<T>(Widget widget) {
-    logger.i('Nav: Current Route -> ${(widget.runtimeType)}');
+
 
     return TransparentRoute<T>(
       builder: (context) => widget,

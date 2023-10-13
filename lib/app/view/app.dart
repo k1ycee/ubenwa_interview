@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ubenwa_thankgod/core/services/services.dart';
 import 'package:ubenwa_thankgod/l10n/l10n.dart';
+import 'package:ubenwa_thankgod/views/splash_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -15,7 +17,9 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: LogoRotate(),
+      debugShowCheckedModeBanner: false,
+      navigatorKey: navigator.key,
+      home: const SplashScreen(),
     );
   }
 }
@@ -32,7 +36,7 @@ class LogoRotateState extends State<LogoRotate> {
   double turns = 0.0;
 
   void _changeRotation() {
-    setState(() => turns += 1.0 / 8.0);
+    setState(() => turns += 1.0 / 4.0);
   }
 
   @override

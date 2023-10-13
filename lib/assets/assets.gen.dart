@@ -70,6 +70,9 @@ class $AssetsImagesSvgGen {
   SvgGenImage get cryingBaby =>
       const SvgGenImage('assets/images/svg/crying_baby.svg');
 
+  /// File path: assets/images/svg/ellipse.svg
+  SvgGenImage get ellipse => const SvgGenImage('assets/images/svg/ellipse.svg');
+
   /// File path: assets/images/svg/ic_cry_count.svg
   SvgGenImage get icCryCount =>
       const SvgGenImage('assets/images/svg/ic_cry_count.svg');
@@ -102,6 +105,7 @@ class $AssetsImagesSvgGen {
         appIcon,
         blushingBaby,
         cryingBaby,
+        ellipse,
         icCryCount,
         icCryDuration,
         icCummulative,

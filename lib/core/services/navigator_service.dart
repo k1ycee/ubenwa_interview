@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-final navigator = EdenNavigationService();
+final navigator = UbenwaNavigationService();
 
-class EdenNavigationService {
+class UbenwaNavigationService {
   /// Navigator state key
   final key = GlobalKey<NavigatorState>();
 

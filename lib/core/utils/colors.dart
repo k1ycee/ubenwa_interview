@@ -16,3 +16,4 @@ const green = Color(0xff14833D);
 const white = Color(0xffFFFFFF);
 
 const gray = Color(0xff858585);
+const gray100 = Color(0xffEBEBEB);

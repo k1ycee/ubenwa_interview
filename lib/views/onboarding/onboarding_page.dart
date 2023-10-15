@@ -6,6 +6,7 @@ import 'package:ubenwa_thankgod/assets/assets.gen.dart';
 import 'package:ubenwa_thankgod/core/services/navigator_service.dart';
 import 'package:ubenwa_thankgod/core/utils/colors.dart';
 import 'package:ubenwa_thankgod/views/home/home_page.dart';
+import 'package:ubenwa_thankgod/views/loading_page.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -289,7 +290,7 @@ class _OnboardingPageState extends State<OnboardingPage>
               },
             ),
           ),
-          Positioned(
+          if(animatedWidgetIndex == 3) Positioned(
             bottom: 150,
             left: 0,
             right: 0,
@@ -297,7 +298,7 @@ class _OnboardingPageState extends State<OnboardingPage>
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: InkWell(
                 onTap: (){
-                  navigator.pushTo(const Homepage());
+                  navigator.pushTo(const LoadingPage());
                 },
                 child: Container(
                   height: 58,

@@ -41,6 +41,14 @@ class $AssetsImagesPngGen {
   AssetGenImage get happyBabyFace =>
       const AssetGenImage('assets/images/png/happy_baby_face.png');
 
+  /// File path: assets/images/png/milk_splash.png
+  AssetGenImage get milkSplash =>
+      const AssetGenImage('assets/images/png/milk_splash.png');
+
+  /// File path: assets/images/png/milk_wave.png
+  AssetGenImage get milkWave =>
+      const AssetGenImage('assets/images/png/milk_wave.png');
+
   /// File path: assets/images/png/new_born_baby.png
   AssetGenImage get newBornBaby =>
       const AssetGenImage('assets/images/png/new_born_baby.png');
@@ -68,6 +76,8 @@ class $AssetsImagesPngGen {
         fullSizeSucklingBaby,
         happyBaby,
         happyBabyFace,
+        milkSplash,
+        milkWave,
         newBornBaby,
         sadBaby,
         sleepingBaby,
@@ -97,6 +107,10 @@ class $AssetsImagesSvgGen {
   SvgGenImage get icCummulative =>
       const SvgGenImage('assets/images/svg/ic_cummulative.svg');
 
+  /// File path: assets/images/svg/milk_drop.svg
+  SvgGenImage get milkDrop =>
+      const SvgGenImage('assets/images/svg/milk_drop.svg');
+
   /// File path: assets/images/svg/notification.svg
   SvgGenImage get notification =>
       const SvgGenImage('assets/images/svg/notification.svg');
@@ -111,6 +125,7 @@ class $AssetsImagesSvgGen {
         icCryCount,
         icCryDuration,
         icCummulative,
+        milkDrop,
         notification,
         star
       ];

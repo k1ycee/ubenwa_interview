@@ -5,7 +5,6 @@ import 'package:intersperse/intersperse.dart';
 import 'package:ubenwa_thankgod/assets/assets.gen.dart';
 import 'package:ubenwa_thankgod/core/services/navigator_service.dart';
 import 'package:ubenwa_thankgod/core/utils/colors.dart';
-import 'package:ubenwa_thankgod/views/home/home_page.dart';
 import 'package:ubenwa_thankgod/views/loading_page.dart';
 
 class OnboardingPage extends StatefulWidget {

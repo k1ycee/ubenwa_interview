@@ -78,7 +78,8 @@ class _HomepageState extends State<Homepage> {
           SizedBox(
             height: 30,
             width: 370,
-            child: ListView(
+            child:
+            ListView(
               scrollDirection: Axis.horizontal,
               children: [
                 ...months.map(
@@ -112,7 +113,7 @@ class _HomepageState extends State<Homepage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: List.generate(
-                days,
+                days + 1,
                 (index) => Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
@@ -240,26 +241,148 @@ class _HomepageState extends State<Homepage> {
             ),
             child: const HourlyBreakDownChart(),
           ),
-          const Gap(35),
-          SimpleCircularProgressBar(
-            backColor: gray100,
-            progressColors: const [Color(0xffFCE1A2), Color(0xffDEA00F)],
-            maxValue: 12,
-            size: 108,
-            backStrokeWidth: 25,
-            progressStrokeWidth: 25,
-            valueNotifier: count,
-            mergeMode: true,
-            onGetText: (double value) {
-              return Text(
-                '${value.toInt()}',
-                style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+          const Gap(14),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 194,
+                  width: 171,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: lavendaarBlue800,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsets.only(top: 11, left: 8, right: 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 24,
+                              width: 24,
+                              decoration: const BoxDecoration(
+                                  shape: BoxShape.circle, color: yellow400),
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: UbenwaAssets.images.svg.star.svg(),
+                              ),
+                            ),
+                            const Gap(6),
+                            Text(
+                              'Daily Challenge',
+                              style: GoogleFonts.inter(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Gap(14),
+                      SimpleCircularProgressBar(
+                        backColor: gray100,
+                        progressColors: const [
+                          Color(0xffFCE1A2),
+                          Color(0xffDEA00F)
+                        ],
+                        maxValue: 12,
+                        size: 108,
+                        backStrokeWidth: 25,
+                        progressStrokeWidth: 25,
+                        valueNotifier: count,
+                        mergeMode: true,
+                        onGetText: (double value) {
+                          return Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: '${value.toInt()}\n',
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                const TextSpan(
+                                  text: ' out of 12\nhours of silence',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 6,
+
+                                    fontWeight: FontWeight.w400,
+                                    // height: 1.50,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            textAlign: TextAlign.center,
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-              );
-            },
+                Container(
+                  height: 194,
+                  width: 171,
+                  decoration: BoxDecoration(
+                    // border: Border.all(
+                    //   color: lavendaarBlue800,
+                    // ),
+                    color: lavendarBlue500,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      UbenwaAssets.images.png.fullSizeSucklingBaby.image(),
+                      Text(
+                        'Next Predicted Cry',
+                        style: GoogleFonts.inter(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w500,
+                          color: gray100,
+                        ),
+                      ),
+                      Text(
+                        '12:40 - 14:30',
+                        style: GoogleFonts.inter(
+                          fontSize: 21,
+                          fontWeight: FontWeight.w600,
+                          color: yellow400,
+                        ),
+                      ),
+                      const Gap(9),
+                      Container(
+                        width: 100,
+                        height: 23,
+                        decoration: BoxDecoration(
+                          color: const Color(0xb5ffffff),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Set Alarm',
+                            style: GoogleFonts.inter(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w500,
+                              color: lavendaarBlue800,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ],
       ),

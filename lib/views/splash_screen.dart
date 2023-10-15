@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ubenwa_thankgod/assets/assets.gen.dart';
 import 'package:ubenwa_thankgod/core/services/navigator_service.dart';
 import 'package:ubenwa_thankgod/core/utils/colors.dart';
-import 'package:ubenwa_thankgod/views/home/home_page.dart';
+// import 'package:ubenwa_thankgod/views/home/home_page.dart';
 import 'package:ubenwa_thankgod/views/onboarding/onboarding_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 3), () {
-      navigator.pushTo(const Homepage());
+      navigator.pushTo(const OnboardingPage());
     });
     super.initState();
   }

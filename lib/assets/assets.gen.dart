@@ -25,6 +25,10 @@ class $AssetsImagesPngGen {
   AssetGenImage get babyBottle =>
       const AssetGenImage('assets/images/png/baby_bottle.png');
 
+  /// File path: assets/images/png/crying_baby_face.png
+  AssetGenImage get cryingBabyFace =>
+      const AssetGenImage('assets/images/png/crying_baby_face.png');
+
   /// File path: assets/images/png/full_size_suckling_baby.png
   AssetGenImage get fullSizeSucklingBaby =>
       const AssetGenImage('assets/images/png/full_size_suckling_baby.png');
@@ -32,6 +36,10 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/happy_baby.png
   AssetGenImage get happyBaby =>
       const AssetGenImage('assets/images/png/happy_baby.png');
+
+  /// File path: assets/images/png/happy_baby_face.png
+  AssetGenImage get happyBabyFace =>
+      const AssetGenImage('assets/images/png/happy_baby_face.png');
 
   /// File path: assets/images/png/new_born_baby.png
   AssetGenImage get newBornBaby =>
@@ -45,14 +53,26 @@ class $AssetsImagesPngGen {
   AssetGenImage get sleepingBaby =>
       const AssetGenImage('assets/images/png/sleeping_baby.png');
 
+  /// File path: assets/images/png/smiling_baby_face.png
+  AssetGenImage get smilingBabyFace =>
+      const AssetGenImage('assets/images/png/smiling_baby_face.png');
+
+  /// File path: assets/images/png/suckling_baby_face.png
+  AssetGenImage get sucklingBabyFace =>
+      const AssetGenImage('assets/images/png/suckling_baby_face.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         babyBottle,
+        cryingBabyFace,
         fullSizeSucklingBaby,
         happyBaby,
+        happyBabyFace,
         newBornBaby,
         sadBaby,
-        sleepingBaby
+        sleepingBaby,
+        smilingBabyFace,
+        sucklingBabyFace
       ];
 }
 
@@ -61,14 +81,6 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/appIcon.svg
   SvgGenImage get appIcon => const SvgGenImage('assets/images/svg/appIcon.svg');
-
-  /// File path: assets/images/svg/blushing_baby.svg
-  SvgGenImage get blushingBaby =>
-      const SvgGenImage('assets/images/svg/blushing_baby.svg');
-
-  /// File path: assets/images/svg/crying_baby.svg
-  SvgGenImage get cryingBaby =>
-      const SvgGenImage('assets/images/svg/crying_baby.svg');
 
   /// File path: assets/images/svg/ellipse.svg
   SvgGenImage get ellipse => const SvgGenImage('assets/images/svg/ellipse.svg');
@@ -89,30 +101,18 @@ class $AssetsImagesSvgGen {
   SvgGenImage get notification =>
       const SvgGenImage('assets/images/svg/notification.svg');
 
-  /// File path: assets/images/svg/smiling_baby.svg
-  SvgGenImage get smilingBaby =>
-      const SvgGenImage('assets/images/svg/smiling_baby.svg');
-
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
-
-  /// File path: assets/images/svg/suckling_baby.svg
-  SvgGenImage get sucklingBaby =>
-      const SvgGenImage('assets/images/svg/suckling_baby.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
         appIcon,
-        blushingBaby,
-        cryingBaby,
         ellipse,
         icCryCount,
         icCryDuration,
         icCummulative,
         notification,
-        smilingBaby,
-        star,
-        sucklingBaby
+        star
       ];
 }
 

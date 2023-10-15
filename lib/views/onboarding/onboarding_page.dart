@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intersperse/intersperse.dart';
 import 'package:ubenwa_thankgod/assets/assets.gen.dart';
 import 'package:ubenwa_thankgod/core/services/navigator_service.dart';
+import 'package:ubenwa_thankgod/core/services/storage_service.dart';
 import 'package:ubenwa_thankgod/core/utils/colors.dart';
 import 'package:ubenwa_thankgod/views/loading_page.dart';
 
@@ -298,6 +299,7 @@ class _OnboardingPageState extends State<OnboardingPage>
               child: InkWell(
                 onTap: (){
                   navigator.pushTo(const LoadingPage());
+                  StorageService.saveIsOnboarded(true);
                 },
                 child: Container(
                   height: 58,

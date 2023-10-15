@@ -1,32 +1,23 @@
 import 'dart:async';
 import 'dart:developer';
 import 'package:flutter/widgets.dart';
+import 'package:ubenwa_thankgod/core/services/storage_service.dart';
 
 class UbenwaBootstrap {
-  const UbenwaBootstrap ();
-
-  // @override
-  // void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
-  //   super.onChange(bloc, change);
-  //   log('onChange(${bloc.runtimeType}, $change)');
-  // }
-
-  // @override
-  // void onError(BlocBase<dynamic> bloc, Object error, StackTrace stackTrace) {
-  //   log('onError(${bloc.runtimeType}, $error, $stackTrace)');
-  //   super.onError(bloc, error, stackTrace);
-  // }
+  const UbenwaBootstrap();
 
   static Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
-  FlutterError.onError = (details) {
-    log(details.exceptionAsString(), stackTrace: details.stack);
-  };
+    FlutterError.onError = (details) {
+      log(details.exceptionAsString(), stackTrace: details.stack);
+    };
 
-
-  // Add cross-flavor configuration here
-
-  runApp(await builder());
+    await runZonedGuarded(() async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await StorageService.init();
+      runApp(await builder());
+    }, (error, stack) {
+      log(error.toString());
+    });
+    // runApp(await runZonedGuarded(() => null, (error, stack) { }));
+  }
 }
-}
-
-

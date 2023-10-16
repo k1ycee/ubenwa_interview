@@ -1,4 +1,3 @@
-// import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,13 +5,11 @@ import 'package:intl/intl.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:ubenwa_thankgod/assets/assets.gen.dart';
 import 'package:ubenwa_thankgod/core/models/month_model.dart';
-import 'package:ubenwa_thankgod/core/services/navigator_service.dart';
 import 'package:ubenwa_thankgod/core/utils/colors.dart';
 import 'package:quiver/time.dart';
 import 'package:ubenwa_thankgod/views/home/utils/overviews.dart';
 import 'package:ubenwa_thankgod/widgets/graph.dart';
 import 'package:ubenwa_thankgod/widgets/overview_widget.dart';
-// import 'package:ubenwa_thankgod/widgets/ubenwa_calendar/ubenwa_calendar.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -57,7 +54,7 @@ class _HomepageState extends State<Homepage> {
               children: [
                 IconButton(
                   onPressed: () {
-                    navigator.pop();
+                    // navigator.pop();
                   },
                   icon: const Icon(Icons.arrow_back_ios),
                 ),
@@ -113,7 +110,7 @@ class _HomepageState extends State<Homepage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: List.generate(
-                days + 1,
+                days ,
                 (index) => Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(

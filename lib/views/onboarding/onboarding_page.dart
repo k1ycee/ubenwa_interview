@@ -59,7 +59,7 @@ class _OnboardingPageState extends State<OnboardingPage>
       body: Stack(
         children: [
           Positioned(
-            top: 100,
+            top: MediaQuery.of(context).size.height / 9,
             left: 0,
             right: 0,
             // alignment: Alignment.topCenter,
@@ -153,14 +153,14 @@ class _OnboardingPageState extends State<OnboardingPage>
             child: Stack(
               children: [
                 Positioned(
-                  top: 200,
+                  top: MediaQuery.of(context).size.height / 4.5,
                   left: 0,
                   right: 0,
                   child: UbenwaAssets.images.svg.ellipse
                       .svg(color: indicatorColor),
                 ),
                 Positioned(
-                  top: 200,
+                  top: MediaQuery.of(context).size.height / 4.5,
                   left: 0,
                   right: 0,
                   child: AnimatedSwitcher(
@@ -173,7 +173,7 @@ class _OnboardingPageState extends State<OnboardingPage>
             ),
           ),
           Positioned(
-            bottom: 430,
+            bottom: MediaQuery.of(context).size.height / 2.3,
             left: 0,
             right: 0,
             child: Row(
@@ -208,7 +208,7 @@ class _OnboardingPageState extends State<OnboardingPage>
             ),
           ),
           Positioned(
-            bottom: 270,
+            bottom: MediaQuery.of(context).size.height / 3.7,
             left: 0,
             right: 0,
             child: Padding(
@@ -290,35 +290,38 @@ class _OnboardingPageState extends State<OnboardingPage>
               },
             ),
           ),
-          if(animatedWidgetIndex == 3) Positioned(
-            bottom: 150,
-            left: 0,
-            right: 0,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: InkWell(
-                onTap: (){
-                  navigator.pushTo(const LoadingPage());
-                  StorageService.saveIsOnboarded(true);
-                },
-                child: Container(
-                  height: 58,
-                  width: 380,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: lavendarBlue500),
-                  child: Center(
-                    child: Text(
-                      'Get Started',
-                      style: GoogleFonts.inter(
-                          fontSize: 18, fontWeight: FontWeight.w600, color: white),
-                      textAlign: TextAlign.center,
+          if (animatedWidgetIndex == 3)
+            Positioned(
+              bottom: MediaQuery.of(context).size.height / 5.5,
+              left: 0,
+              right: 0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: InkWell(
+                  onTap: () {
+                    navigator.pushTo(const LoadingPage());
+                    StorageService.saveIsOnboarded(true);
+                  },
+                  child: Container(
+                    height: 58,
+                    width: 380,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: lavendarBlue500),
+                    child: Center(
+                      child: Text(
+                        'Get Started',
+                        style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: white),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
           Positioned(
             bottom: 80,
             left: 0,

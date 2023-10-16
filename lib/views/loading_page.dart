@@ -62,7 +62,6 @@ class _LoadingPageState extends State<LoadingPage>
     return Scaffold(
       backgroundColor: lavendarBlue500,
       body: Stack(
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Align(
             alignment: Alignment.topCenter,

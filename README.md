@@ -34,6 +34,6 @@ $ make run-prod
 _\*Ubenwa Thankgod works on iOS and Android_
 
 
-## Screenshot 
+## Video Walkthrough
 
-![Recording](/record.mp4)
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWIyZm8ybHNrY25ob3Ziazl4dmIxamY0NGZhNXNmN3lqc3VsNjVueiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hvbSQAQTjISB5Z83KL/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />

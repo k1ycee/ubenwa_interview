@@ -331,9 +331,6 @@ class _HomepageState extends State<Homepage> {
                     height: 194,
                     width: 171,
                     decoration: BoxDecoration(
-                      // border: Border.all(
-                      //   color: lavendaarBlue800,
-                      // ),
                       color: lavendarBlue500,
                       borderRadius: BorderRadius.circular(8),
                     ),

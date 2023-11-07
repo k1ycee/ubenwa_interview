@@ -80,7 +80,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                         child: Container(
                           height: 57,
                           width: 57,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle, color: yellow200),
                           child: AnimatedRotation(
                             turns: -turns,
@@ -97,7 +97,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                         child: Container(
                           height: 57,
                           width: 57,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle, color: lavendarBlue100),
                           child: AnimatedRotation(
                             turns: -turns,
@@ -114,7 +114,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                         child: Container(
                           height: 57,
                           width: 57,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle, color: lavendarBlue100),
                           child: AnimatedRotation(
                             turns: -turns,
@@ -131,7 +131,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                         child: Container(
                           height: 57,
                           width: 57,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle, color: yellow200),
                           child: AnimatedRotation(
                             turns: -turns,
@@ -347,68 +347,8 @@ class _OnboardingPageState extends State<OnboardingPage>
                       ),
                     ],
                   ),
-                1 => Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          _reverseRotation();
-                        },
-                        child: Text(
-                          'Previous',
-                          style: GoogleFonts.inter(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: gray200),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          _changeRotation();
-                        },
-                        child: Text(
-                          'Next',
-                          style: GoogleFonts.inter(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: lavendarBlue500),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                2 => Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          _reverseRotation();
-                        },
-                        child: Text(
-                          'Previous',
-                          style: GoogleFonts.inter(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: gray200),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          _changeRotation();
-                        },
-                        child: Text(
-                          'Next',
-                          style: GoogleFonts.inter(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: lavendarBlue500),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
+                1 => previousNextButton(),
+                2 => previousNextButton(),
                 3 => Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -433,6 +373,38 @@ class _OnboardingPageState extends State<OnboardingPage>
           ),
         ],
       ),
+    );
+  }
+
+  Row previousNextButton() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        InkWell(
+          onTap: () {
+            _reverseRotation();
+          },
+          child: Text(
+            'Previous',
+            style: GoogleFonts.inter(
+                fontSize: 16, fontWeight: FontWeight.w600, color: gray200),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            _changeRotation();
+          },
+          child: Text(
+            'Next',
+            style: GoogleFonts.inter(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: lavendarBlue500),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
     );
   }
 }

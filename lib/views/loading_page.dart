@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ubenwa_thankgod/assets/assets.gen.dart';
@@ -21,7 +19,7 @@ class _LoadingPageState extends State<LoadingPage>
   late AnimationController splashAnimationController;
 
   late Animation<Offset> animation =
-      Tween<Offset>(begin: Offset.zero, end: const Offset(0.0, 40))
+      Tween<Offset>(begin: Offset.zero, end: const Offset(0, 40))
           .animate(animationController);
 
   late Animation<double> splashAnimation = CurvedAnimation(
@@ -44,9 +42,10 @@ class _LoadingPageState extends State<LoadingPage>
         splashAnimationController.forward();
       }
     });
-
-    Timer(const Duration(milliseconds: 1550), () {
-      navigator.pushTo(const Homepage());
+    splashAnimationController.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        navigator.pushTo(const Homepage());
+      }
     });
     super.initState();
   }
@@ -63,11 +62,16 @@ class _LoadingPageState extends State<LoadingPage>
       backgroundColor: lavendarBlue500,
       body: Stack(
         children: [
-          Align(
-            alignment: Alignment.topCenter,
-            child: SlideTransition(
-              position: animation,
-              child: UbenwaAssets.images.svg.milkDrop.svg(),
+          Positioned(
+            top: 70,
+            left: 0,
+            right: 0,
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: SlideTransition(
+                position: animation,
+                child: UbenwaAssets.images.svg.milkDrop.svg(),
+              ),
             ),
           ),
           Align(
